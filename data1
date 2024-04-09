@@ -1,1 +1,28 @@
+Video Game Sales
+Uploading data to the storage under the new folder Sales
+CREATE EXTERNAL TABLE sales
 
+(
+  Name string,
+  Platform string,
+  Year_of_Release int,
+  Genre string,
+  Publisher string,
+  NA_Sales float,
+  EU_Sales float,
+  JP_Sales float,
+  Other_Sales float,
+  Global_Sales float,
+  Critic_Score int,
+  Critic_Count int,
+  User_Score float,
+  User_Count int,
+  Developer string,
+  Rating string
+)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE LOCATION '/Sales'
+TBLPROPERTIES("skip.header.line.count"="1");
+
+check table
